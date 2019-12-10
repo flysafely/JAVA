@@ -1,0 +1,24 @@
+### 概念
+  + 支持运行时查询和操作对象图
+  + 使用#{...}作为界定符，所有在{}中的内容都会被认为是SpEL
+  + 用于对bean属性动态赋值
+  > 注意:<br>
+    1.不建议使用SpEL来赋值字面值<br>
+    2.字符串需要使用引号
+    
+### 使用场景
+  + 类似属性ref，引用其他bean对象
+    > prefixGenerator 是一个bean的id名称
+    ```xml
+    <property name="prefix" value="#{prefixGenerator}"></property>
+    ```
+  + 引用其他bean对象的属性值
+    > beanObject.params1是beanObject对象中的params的属性值
+    ```xml
+    <property name="prefix" value="#{beanObject.params1}"></property>
+    ```
+  + 引用其他bean对象的方法
+    > beanObject.funcation()是beanObject对象中的params的方法
+    ```xml
+    <property name="prefix" value="#{beanObject.funcation()}"></property>
+    ```
