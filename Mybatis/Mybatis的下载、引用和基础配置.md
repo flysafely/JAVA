@@ -6,5 +6,14 @@
     + **Source code:** <br>
       > 内含mybatis-3.5.3.的源码，用于在编写代码时候查询相关内容具体信息
 ### Mybatis的引用
-
+  + 导入jar包
+    + mybatis-3.5.3.jar
+    + mysql-connector-java.jar
+    + log4j-1.2.17.jar //用于打印日志内容，同时需要配置一个[log4j.xml](https://blog.csdn.net/sndayYU/article/details/80722062)文件
 ### Mybatis的配置
+  + 离线状态下mybatis配置文件(全局配置文件和SQL配置文件)中的代码提示功能(Alt+/)
+    + 解压mybatis.jar包中的mybatis-3.5.3\org\apache\ibatis\builder\xml中的两个dtd约束文件
+      + mybatis-3-config.dtd 全局配置约束文件
+      + mybatis-3-mapper.dtd SQL映射配置约束文件
+  + 联线状态下
+    > 只需要点击一下xml文件顶部的http://mybatis.org/dtd/mybatis-3-config.dtd就会自动下载，关闭xml后再打开就有提示了
