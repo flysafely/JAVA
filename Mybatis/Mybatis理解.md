@@ -17,7 +17,7 @@
       缺点：<br>
         1.如果需要定制SQL语句来提高增删改查效率，只能使用其指定的HQL语言来实现
         2.因为其HQL也是需要写在JAVA源码中的，所以具有高耦合性
-  + **Mybatis**
+  + [**Mybatis**](https://mybatis.org/mybatis-3/zh/index.html)
     > 一个半自动的ORM框架<br>
       将**编写SQL**这个环节独立出来称为**配置文件**<br>
       半自动:<br>
