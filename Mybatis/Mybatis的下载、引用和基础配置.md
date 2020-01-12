@@ -16,10 +16,12 @@
       + mybatis-3-config.dtd 全局配置约束文件
       + mybatis-3-mapper.dtd SQL映射配置约束文件
     + 在windows->preferences->XML->XML catalog->在User Specified Entries中Add
-      + Location填入mybatis-3-mapper.dtd<br>
-                    mybatis-3-config.dtd文件路径
-      + key填http://mybatis.org/dtd/mybatis-3-mapper.dtd<br>
-             http://mybatis.org/dtd/mybatis-3-config.dtd
+      + Location填<br>
+        mybatis-3-mapper.dtd<br>
+        mybatis-3-config.dtd文件路径
+      + key填<br>
+        http://mybatis.org/dtd/mybatis-3-mapper.dtd<br>
+        http://mybatis.org/dtd/mybatis-3-config.dtd
   + 联线状态下
     + 只需要点击一下xml文件顶部的http://mybatis.org/dtd/mybatis-3-config.dtd就会自动下载，关闭xml后再打开就有提示了
     + 或者在Marketplace中搜索mybatis，安装即可
