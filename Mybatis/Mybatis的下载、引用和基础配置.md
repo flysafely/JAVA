@@ -16,4 +16,5 @@
       + mybatis-3-config.dtd 全局配置约束文件
       + mybatis-3-mapper.dtd SQL映射配置约束文件
   + 联线状态下
-    > 只需要点击一下xml文件顶部的http://mybatis.org/dtd/mybatis-3-config.dtd就会自动下载，关闭xml后再打开就有提示了
+    + 只需要点击一下xml文件顶部的http://mybatis.org/dtd/mybatis-3-config.dtd就会自动下载，关闭xml后再打开就有提示了
+    + 或者在Marketplace中搜索mybatis，安装即可
