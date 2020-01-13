@@ -14,5 +14,7 @@
     + 服务于**java**平台的**自动化构建**工具
     + 进化：Make-Ant-**Maven**-Gradle
     + 构建：去收集可以让一个项目运行的所有资源(.jar/.java/.html/.jsp/.img/.xml等)
-    + Tips：编译结果的目录结构跟项目目录结构不相同(例如:项目中的WebContent文件夹在编译结果中就没有这个文件夹)
+    + *Tips*：编译结果的目录结构跟项目目录结构不相同(例如:项目中的WebContent文件夹在编译结果中就没有这个文件夹)
       > 很多文件访问路径写法需要按照最后编译结果的目录结构来写
+    + *Tips*：Web项目最后的编译结果是放在Tomcat服务器下的一个位置
+      > 如何查找该位置，需要在eclipse安装目录中的dropins文件夹中放入相关插件，然后就可以在Servers中右键当前的Apache-Tomcat服务器选择Browse Deployment Location自动跳转到项目编译结果位置
