@@ -1,3 +1,12 @@
 ### Maven理解
   + 现目前的项目技术
     + ![image-1](https://github.com/flysafely/JAVA/blob/master/Pictures/Maven-1.jpg)
+  + 存在的问题
+    + 一个项目是一个工程
+      > Maven可以将一个项目拆分成多个工程
+    + jar包需要手动添加到lib中
+      > Maven可以重用lib中的jar包，它将整个工程所需要的所有jar放在仓库中，拆分后的多个子项目自行引用就行
+    + jar包需要手动下载
+      > Maven仓库将统一规范下载渠道，有些jar提供者自行适配Maven的下载
+    + jar包之间的依赖需要手动添加
+      > Maven只需要在配置文件中指明依赖关系即可自动配置导入相关jar包
