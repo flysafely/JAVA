@@ -1,4 +1,4 @@
-### @注释的原理
+### [@注释的原理](https://www.cnblogs.com/zsty/p/10058185.html)
   + 注解的结构
     ```java
       @Target(ElementType.METHOD)
@@ -47,5 +47,85 @@
       @Author("flysafely")
       public void someMethod {
       
+      }
+      ```
+    + 注解使用范例
+      + BusinessLogic.java
+      ```java
+         public class BusinessLogic {
+            public BusinessLogic() {
+                super();
+            }
+
+            public void compltedMethod() {
+                System.out.println("This method is complete");
+            }    
+
+            @Todo(priority = Todo.Priority.HIGH)
+            public void notYetStartedMethod() {
+                // No Code Written yet
+            }
+
+            @Todo(priority = Todo.Priority.MEDIUM, author = "Uday", status = Todo.Status.STARTED)
+            public void incompleteMethod1() {
+                //Some business logic is written
+                //But its not complete yet
+            }
+
+            @Todo(priority = Todo.Priority.LOW, status = Todo.Status.STARTED )
+            public void incompleteMethod2() {
+                //Some business logic is written
+                //But its not complete yet
+            }
+        }
+      ```
+      + Todo.java
+      ```java
+      import java.lang.annotation.ElementType;
+      import java.lang.annotation.Retention;
+      import java.lang.annotation.RetentionPolicy;
+      import java.lang.annotation.Target;
+
+      @Target(ElementType.METHOD)
+      @Retention(RetentionPolicy.RUNTIME)
+      @interface Todo {
+          public enum Priority {LOW, MEDIUM, HIGH}
+          public enum Status {STARTED, NOT_STARTED}    
+          String author() default "Yash";
+          Priority priority() default Priority.LOW;
+          Status status() default Status.NOT_STARTED;
+      }
+      ```
+      + TodoTest
+      ```java
+      import java.lang.reflect.Method;
+
+      public class TodoReport {
+          public TodoReport() {
+              super();
+          }
+
+          public static void main(String[] args) {
+              getTodoReportForBusinessLogic();
+          }
+
+          /**
+           * This method iterates through all messages of BusinessLogic class and fetches annotations defined on each of them.
+           * After that it displays the information from annotation accordingly.
+           */
+          private static void getTodoReportForBusinessLogic() {
+
+              Class businessLogicClass = BusinessLogic.class;
+              for(Method method : businessLogicClass.getMethods()) {
+                  Todo todoAnnotation = (Todo)method.getAnnotation(Todo.class);
+                  if(todoAnnotation != null) {
+                      System.out.println(" Method Name : " + method.getName());
+                      System.out.println(" Author : " + todoAnnotation.author());
+                      System.out.println(" Priority : " + todoAnnotation.priority());
+                      System.out.println(" Status : " + todoAnnotation.status());
+                      System.out.println(" --------------------------- ");
+                  }
+              }
+          }
       }
       ```
