@@ -17,3 +17,15 @@
       2.注解Annotation类型、方法定义是独特的、受限制的<br>
       3.注解Annotation类型的**方法**必须申明为无参数、无异常抛出的<br>
       4.注解Annotation的成员：方法名称为了成员名，而方法返回值称为了成员的类型
+    + @Target()
+      > @Target – 表示该注解用于什么地方。如果不明确指出，该注解可以放在任何地方。
+        需要说明的是：属性的注解是兼容的，如果你想给7个属性都添加注解，仅仅排除一个属性，那么你需要在定义target包含所有的属性。
+        以下是一些可用的参数：
+        * ElementType.TYPE:用于描述类、接口或enum声明
+        * ElementType.FIELD:用于描述实例变量
+        * ElementType.METHOD
+        * ElementType.PARAMETER
+        * ElementType.CONSTRUCTOR
+        * ElementType.LOCAL_VARIABLE
+        * ElementType.ANNOTATION_TYPE 另一个注释
+        * ElementType.PACKAGE 用于记录java文件的package信息
